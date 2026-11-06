@@ -3,29 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b0b0d">
-<meta name="description" content="Fonsati do Corte — Barbearia com sistema Chegou, Cortou! Estilo, atitude e confiança na Rua Cisne Negro, 887. WhatsApp (43) 99621-6760.">
-<meta property="og:title" content="Fonsati do Corte — Barbearia">
-<meta property="og:description" content="Fonsati do Corte — Desde 2025. Barbearia masculina com sistema Chegou, Cortou! Aberto de Segunda a Sexta na Rua Cisne Negro, 887. WhatsApp (43) 99621-6760.">
-<title>Fonsati do Corte — Barbearia</title>
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Fonsati do Corte — Barbearia Masculina na Rua Cisne Negro, 887. Cortes sociais por R$ 30, degradê moderno por R$ 35, barba R$ 10 e pezinho R$ 15 no sistema Chegou, Cortou!">
+<meta property="og:title" content="Fonsati do Corte — Barbearia Masculina">
+<meta property="og:description" content="Desde 2025 · Estilo, Atitude e Confiança. Cortes sociais R$ 30, degrade moderno R$ 35, barba R$ 10, pezinho R$ 15. Rua Cisne Negro, 887. WhatsApp (43) 99621-6760.">
+<title>Fonsati do Corte — Barbearia Masculina</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 /* ============ VARIÁVEIS ============ */
 :root{
-  --bg:#0b0b0d;
-  --bg-soft:#101014;
-  --card:#16161b;
-  --line:rgba(255,255,255,.07);
+  --bg:#08080a;
+  --bg-card:#111116;
+  --bg-card-hover:#16161d;
+  --line:rgba(255,255,255,.08);
+  --line-gold:rgba(201,162,39,.32);
   --gold:#c9a227;
-  --gold-light:#e8c85c;
-  --text:#f3f3f5;
-  --muted:#95959f;
+  --gold-light:#f3d368;
+  --gold-dark:#977412;
+  --text:#f5f5f7;
+  --muted:#9e9ea8;
   --radius:16px;
-  --max:640px;
+  --radius-sm:10px;
+  --max:680px;
 }
 
 /* ============ RESET ============ */
@@ -41,23 +44,23 @@ body{
   -webkit-font-smoothing:antialiased;
   -webkit-tap-highlight-color:transparent;
 }
-img{display:block;width:100%;height:100%;object-fit:cover;background:var(--card);}
+img{display:block;width:100%;height:100%;object-fit:cover;background:#111;}
 a{text-decoration:none;color:inherit;}
 ul{list-style:none;}
-::selection{background:var(--gold);color:#0b0b0d;}
+::selection{background:var(--gold);color:#08080a;}
 
-/* ============ ABERTURA / SPLASH ============ */
+/* ============ ABERTURA / SPLASH (100% PRETO SÓLIDO) ============ */
 .splash-screen{
   position:fixed;
   inset:0;
   z-index:99999;
-  background:#000000;
-  background-color:#000000;
+  background:#000000 !important;
+  background-color:#000000 !important;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:24px;
-  transition:opacity .7s cubic-bezier(.4, 0, .2, 1), transform .7s cubic-bezier(.4, 0, .2, 1), visibility .7s;
+  transition:opacity .65s cubic-bezier(.4, 0, .2, 1), transform .65s cubic-bezier(.4, 0, .2, 1), visibility .65s;
   cursor:pointer;
 }
 .splash-screen.fade-out{
@@ -75,14 +78,14 @@ ul{list-style:none;}
   animation:splashIntro .85s cubic-bezier(.16, 1, .3, 1) forwards;
 }
 @keyframes splashIntro {
-  0%{opacity:0;transform:scale(.82) translateY(24px);}
+  0%{opacity:0;transform:scale(.85) translateY(20px);}
   100%{opacity:1;transform:scale(1) translateY(0);}
 }
 .splash-logo-wrapper{
   position:relative;
-  width:165px;
-  height:165px;
-  margin-bottom:20px;
+  width:160px;
+  height:160px;
+  margin-bottom:18px;
 }
 .splash-logo-img{
   width:100%;
@@ -90,21 +93,16 @@ ul{list-style:none;}
   border-radius:50%;
   object-fit:cover;
   border:3px solid var(--gold);
-  box-shadow:0 0 38px rgba(201,162,39,.55), 0 16px 36px rgba(0,0,0,.9);
-  position:relative;
-  z-index:2;
+  box-shadow:0 0 32px rgba(201,162,39,.5), 0 16px 36px rgba(0,0,0,.9);
   animation:logoPulse 2.4s ease-in-out infinite alternate;
 }
 @keyframes logoPulse {
   0%{transform:scale(1);box-shadow:0 0 25px rgba(201,162,39,.4);}
-  100%{transform:scale(1.04);box-shadow:0 0 48px rgba(201,162,39,.7);}
-}
-.splash-glow{
-  display:none;
+  100%{transform:scale(1.04);box-shadow:0 0 45px rgba(201,162,39,.7);}
 }
 .splash-title{
   font-family:'Bebas Neue',sans-serif;
-  font-size:2.5rem;
+  font-size:2.6rem;
   letter-spacing:3px;
   color:var(--text);
   line-height:1;
@@ -113,7 +111,7 @@ ul{list-style:none;}
 .splash-title span{color:var(--gold);}
 .splash-badge{
   display:inline-block;
-  padding:5px 16px;
+  padding:4px 16px;
   border-radius:999px;
   background:rgba(201,162,39,.18);
   border:1px solid rgba(201,162,39,.5);
@@ -132,7 +130,7 @@ ul{list-style:none;}
   margin-bottom:22px;
 }
 .splash-loader{
-  width:140px;
+  width:130px;
   height:3px;
   background:rgba(255,255,255,.1);
   border-radius:99px;
@@ -144,7 +142,7 @@ ul{list-style:none;}
   height:100%;
   background:linear-gradient(90deg, var(--gold-light), var(--gold));
   border-radius:99px;
-  animation:splashProgress 1.7s ease-in-out forwards;
+  animation:splashProgress 1.6s ease-in-out forwards;
   transform-origin:left;
 }
 @keyframes splashProgress {
@@ -167,36 +165,36 @@ ul{list-style:none;}
 .splash-skip:hover, .splash-skip:active{
   border-color:var(--gold);
   color:var(--gold-light);
-  background:rgba(201,162,39,.12);
 }
 
-/* ============ UTIL ============ */
+/* ============ UTILITÁRIOS ============ */
 .container{
   width:100%;
   max-width:var(--max);
   margin:0 auto;
   padding:0 20px;
 }
-section{padding:52px 0;scroll-margin-top:70px;}
+section{padding:54px 0;scroll-margin-top:70px;}
 .eyebrow{
   display:inline-block;
   font-size:.75rem;
-  font-weight:600;
+  font-weight:700;
   letter-spacing:.28em;
   text-transform:uppercase;
   color:var(--gold);
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 h2{
   font-family:'Bebas Neue',sans-serif;
   font-weight:400;
-  font-size:clamp(1.65rem, 6.5vw, 2.2rem);
+  font-size:clamp(1.9rem, 7vw, 2.4rem);
   line-height:1.05;
   letter-spacing:.5px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 .lead{color:var(--muted);font-size:.92rem;max-width:44ch;}
 .gold{color:var(--gold);}
+.gold-light{color:var(--gold-light);}
 
 /* ============ HEADER ============ */
 .header{
@@ -207,35 +205,52 @@ h2{
   transition:background .3s ease, backdrop-filter .3s ease, border-color .3s ease;
 }
 .header.scrolled{
-  background:rgba(11,11,13,.88);
+  background:rgba(8,8,10,.92);
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
-  border-bottom-color:rgba(201,162,39,.22);
+  border-bottom-color:var(--line-gold);
 }
 .header-inner{
   max-width:var(--max);margin:0 auto;padding:0 20px;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
 }
 .logo{
   display:flex;align-items:center;gap:10px;
   font-family:'Bebas Neue',sans-serif;
-  font-size:1.3rem;letter-spacing:2px;line-height:1;
+  font-size:1.35rem;letter-spacing:2px;line-height:1;
   white-space:nowrap;
 }
 .logo-icon{
-  width:40px;height:40px;border-radius:50%;
+  width:42px;height:42px;border-radius:50%;
   object-fit:cover;
   border:1.5px solid var(--gold);
   box-shadow:0 0 12px rgba(201,162,39,.35);
   flex-shrink:0;
 }
 .logo span{color:var(--gold);}
+.header-status{
+  display:none;
+  align-items:center;gap:6px;
+  font-size:.74rem;
+  font-weight:600;
+  color:#2ee36b;
+  letter-spacing:.05em;
+  background:rgba(46,227,107,.1);
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid rgba(46,227,107,.25);
+}
+.header-status-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#2ee36b;
+  box-shadow:0 0 6px #2ee36b;
+}
 .btn-header{
-  font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   padding:9px 16px;border-radius:999px;
-  color:#0b0b0d;
+  color:#08080a;
   background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  box-shadow:0 6px 16px rgba(201,162,39,.25);
+  box-shadow:0 6px 18px rgba(201,162,39,.3);
   transition:transform .2s ease;
   white-space:nowrap;
 }
@@ -245,20 +260,20 @@ h2{
 .hero{
   position:relative;
   display:flex;align-items:center;
-  min-height:82svh;
-  padding:100px 0 56px;
+  min-height:86svh;
+  padding:105px 0 58px;
   overflow:hidden;
 }
 .hero-bg{
   position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
-  background-color:#1a1a1f;
+  background:url('/images/interior.jpg') center/cover no-repeat;
+  filter:brightness(.32) contrast(1.1);
 }
 .hero-overlay{
   position:absolute;inset:0;
   background:
-    linear-gradient(180deg, rgba(11,11,13,.86) 0%, rgba(11,11,13,.65) 40%, rgba(11,11,13,.98) 100%),
-    radial-gradient(circle at 50% 25%, rgba(201,162,39,.24), transparent 64%);
+    linear-gradient(180deg, rgba(8,8,10,.85) 0%, rgba(8,8,10,.6) 40%, rgba(8,8,10,.98) 100%),
+    radial-gradient(circle at 50% 28%, rgba(201,162,39,.22), transparent 65%);
 }
 .hero-content{position:relative;z-index:2;text-align:center;}
 
@@ -267,40 +282,26 @@ h2{
   margin-bottom:18px;
 }
 .hero-logo-img{
-  width:130px;height:130px;
+  width:135px;height:135px;
   border-radius:50%;
   border:2.5px solid var(--gold);
-  box-shadow:0 0 32px rgba(201,162,39,.45), 0 14px 32px rgba(0,0,0,.8);
+  box-shadow:0 0 35px rgba(201,162,39,.45), 0 16px 36px rgba(0,0,0,.85);
   object-fit:cover;
   animation:floatLogo 4s ease-in-out infinite alternate;
 }
 @keyframes floatLogo {
   0%{transform:translateY(0) scale(1);}
-  100%{transform:translateY(-6px) scale(1.03);}
+  100%{transform:translateY(-6px) scale(1.025);}
 }
 
 .hero-tagline{
   display:inline-block;
-  font-size:.78rem;
-  font-weight:600;
-  letter-spacing:.25em;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.26em;
   text-transform:uppercase;
   color:var(--gold-light);
-  margin-bottom:8px;
-}
-.hero h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-weight:400;
-  font-size:clamp(2.8rem, 14vw, 4.4rem);
-  line-height:.92;
-  letter-spacing:1px;
-  margin:4px 0 16px;
-}
-.hero p{
-  color:#d4d4dc;
-  font-size:1rem;
-  max-width:38ch;
-  margin:0 auto 24px;
+  margin-bottom:6px;
 }
 .hero-badge-chegou{
   display:inline-flex;
@@ -308,14 +309,14 @@ h2{
   gap:8px;
   padding:6px 16px;
   border-radius:999px;
-  background:rgba(201,162,39,.14);
+  background:rgba(201,162,39,.15);
   border:1px solid rgba(201,162,39,.45);
   color:var(--gold-light);
   font-size:.8rem;
   font-weight:700;
   letter-spacing:.12em;
   text-transform:uppercase;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 .hero-badge-chegou::before{
   content:'';
@@ -325,96 +326,298 @@ h2{
   box-shadow:0 0 8px #2ee36b;
 }
 
-.hero-actions{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto;}
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-weight:400;
+  font-size:clamp(3rem, 15vw, 4.6rem);
+  line-height:.92;
+  letter-spacing:1px;
+  margin:4px 0 16px;
+}
+.hero p{
+  color:#d0d0d8;
+  font-size:1.02rem;
+  max-width:40ch;
+  margin:0 auto 26px;
+}
+.hero-actions{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto;}
 
 /* ============ BOTÕES ============ */
 .btn{
   display:flex;align-items:center;justify-content:center;gap:10px;
   padding:14px 22px;
   border-radius:999px;
-  font-size:.92rem;font-weight:600;letter-spacing:.02em;
-  transition:transform .18s ease;
+  font-size:.92rem;font-weight:700;letter-spacing:.02em;
+  transition:transform .18s ease, box-shadow .2s ease;
 }
 .btn:active{transform:scale(.97);}
 .btn-primary{
-  color:#0b0b0d;
+  color:#08080a;
   background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  box-shadow:0 10px 24px rgba(201,162,39,.28);
+  box-shadow:0 10px 24px rgba(201,162,39,.32);
 }
+.btn-primary:hover{box-shadow:0 12px 28px rgba(201,162,39,.45);}
 .btn-ghost{
   color:var(--text);
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.03);
-  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(8px);
 }
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);}
 .btn svg{width:18px;height:18px;flex-shrink:0;}
 
-/* ============ SERVIÇOS ============ */
-.services{
+/* ============ TABELA DE PREÇOS ============ */
+.services-section{
+  background:linear-gradient(180deg, transparent 0%, rgba(17,17,22,.5) 50%, transparent 100%);
+}
+.prices-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:22px;
+}
+.price-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  transition:border-color .25s ease, transform .2s ease, box-shadow .25s ease;
+}
+.price-card.featured{
+  border-color:var(--line-gold);
+  background:linear-gradient(145deg, rgba(201,162,39,.08) 0%, var(--bg-card) 60%);
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+.price-card:hover{
+  border-color:rgba(201,162,39,.55);
+  transform:translateY(-2px);
+}
+.card-badge{
+  position:absolute;
+  top:-10px;
+  right:16px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:#08080a;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:3px 10px;
+  border-radius:999px;
+  box-shadow:0 4px 12px rgba(201,162,39,.35);
+}
+.price-card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:8px;
+}
+.price-card h3{
+  font-size:1.15rem;
+  font-weight:700;
+  line-height:1.2;
+}
+.price-val{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.85rem;
+  line-height:1;
+  color:var(--gold);
+  white-space:nowrap;
+}
+.price-card p{
+  font-size:.85rem;
+  color:var(--muted);
+  line-height:1.45;
+  margin-bottom:14px;
+}
+.btn-card-order{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:var(--radius-sm);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--text);
+  font-size:.8rem;
+  font-weight:600;
+  transition:all .2s ease;
+}
+.btn-card-order:hover, .btn-card-order:active{
+  background:rgba(201,162,39,.15);
+  border-color:var(--gold);
+  color:var(--gold-light);
+}
+.btn-card-order svg{width:15px;height:15px;fill:currentColor;}
+
+/* ============ COMBOS ============ */
+.combos-title{
+  margin-top:28px;
+  font-size:1.2rem;
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:1px;
+  color:var(--gold);
+}
+.combos-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-top:20px;
+  gap:10px;
+  margin-top:10px;
 }
-.service{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:5px;
-  background:var(--card);
+.combo-card{
+  background:var(--bg-card);
   border:1px solid var(--line);
-  border-radius:var(--radius);
+  border-radius:var(--radius-sm);
   padding:14px;
-  transition:border-color .25s ease, transform .2s ease;
 }
-.service:active{border-color:rgba(201,162,39,.5);transform:scale(.98);}
-.service h3{
-  font-size:.92rem;font-weight:600;line-height:1.25;
-}
-.service p{font-size:.8rem;color:var(--muted);line-height:1.35;}
-.price{
+.combo-card h4{font-size:.9rem;font-weight:700;margin-bottom:4px;}
+.combo-card .combo-price{
   font-family:'Bebas Neue',sans-serif;
-  font-size:1.25rem;letter-spacing:.8px;
-  color:var(--gold);
-  margin-top:auto;
-  line-height:1;
+  font-size:1.35rem;
+  color:var(--gold-light);
 }
 
-/* ============ GALERIA ============ */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  margin-top:20px;
-}
-.gallery figure{
-  aspect-ratio:1/1;
-  border-radius:12px;
-  overflow:hidden;
-  background:var(--card);
-  border:1px solid var(--line);
-}
-
-/* ============ SOBRE ============ */
-.about-wrap{
+/* ============ GALERIA REAL ============ */
+.gallery-intro{
   display:flex;
-  flex-direction:column;
-  gap:20px;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
 }
-.about-img{
-  aspect-ratio:16/9;
+.gallery-badge{
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#2ee36b;
+  background:rgba(46,227,107,.12);
+  border:1px solid rgba(46,227,107,.25);
+  padding:4px 10px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.gallery-item{
+  position:relative;
+  aspect-ratio:1/1;
   border-radius:var(--radius);
   overflow:hidden;
   border:1px solid var(--line);
+  cursor:pointer;
+  transition:transform .25s ease, border-color .25s ease;
+  background:#111;
+}
+.gallery-item:hover{
+  transform:scale(1.02);
+  border-color:var(--gold);
+  z-index:2;
+}
+.gallery-item img{
+  transition:transform .4s ease;
+}
+.gallery-item:hover img{
+  transform:scale(1.06);
+}
+.gallery-caption{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:20px 10px 8px;
+  background:linear-gradient(180deg, transparent 0%, rgba(8,8,10,.92) 85%);
+  font-size:.76rem;
+  font-weight:600;
+  color:#f3f3f5;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.gallery-caption span{
+  color:var(--gold);
+}
+
+/* ============ LIGHTBOX / MODAL ============ */
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  background:rgba(0,0,0,.94);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  cursor:zoom-out;
+}
+.lightbox.active{display:flex;}
+.lightbox-img{
+  max-width:92vw;
+  max-height:86vh;
+  object-fit:contain;
+  border-radius:12px;
+  border:2px solid var(--gold);
+  box-shadow:0 0 40px rgba(0,0,0,.9);
+  animation:zoomIn .25s ease;
+}
+@keyframes zoomIn {
+  from{transform:scale(.92);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+.lightbox-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;
+  font-size:24px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+}
+
+/* ============ SOBRE (COM FACHADA REAL) ============ */
+.about-card{
   position:relative;
+  aspect-ratio:16/10;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line-gold);
+  margin-bottom:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,.6);
+}
+.about-card-badge{
+  position:absolute;
+  bottom:14px;left:14px;
+  background:rgba(8,8,10,.85);
+  backdrop-filter:blur(8px);
+  padding:6px 14px;
+  border-radius:999px;
+  border:1px solid var(--gold);
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--gold-light);
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 .stats{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:8px;
-  margin-top:18px;
+  margin-top:20px;
 }
 .stat{
-  background:var(--card);
+  background:var(--bg-card);
   border:1px solid var(--line);
   border-radius:12px;
   padding:14px 8px;
@@ -423,69 +626,100 @@ h2{
 .stat strong{
   display:block;
   font-family:'Bebas Neue',sans-serif;
-  font-size:1.4rem;
+  font-size:1.5rem;
   color:var(--gold);
   line-height:1;
   letter-spacing:.5px;
 }
 .stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
 
-/* ============ CONTATO / HORÁRIOS ============ */
+/* ============ DEPOIMENTOS ============ */
+.reviews-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  margin-top:18px;
+}
+.review-card{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  padding:14px 16px;
+}
+.review-stars{
+  color:var(--gold);
+  font-size:.85rem;
+  margin-bottom:6px;
+}
+.review-card p{
+  font-size:.86rem;
+  color:#d4d4dc;
+  font-style:italic;
+  margin-bottom:8px;
+  line-height:1.4;
+}
+.review-author{
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--gold-light);
+}
+
+/* ============ CONTATO & HORÁRIOS ============ */
 .info-card{
-  background:var(--card);
+  background:var(--bg-card);
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:2px 16px;
+  padding:4px 18px;
   margin-top:20px;
 }
 .info-row{
   display:flex;align-items:center;justify-content:space-between;gap:14px;
-  padding:12px 0;
+  padding:13px 0;
   border-bottom:1px solid var(--line);
-  font-size:.9rem;
+  font-size:.92rem;
 }
 .info-row:last-child{border-bottom:none;}
 .info-row .label{color:var(--muted);}
-.info-row .value{font-weight:500;text-align:right;line-height:1.4;}
+.info-row .value{font-weight:600;text-align:right;line-height:1.4;}
 .info-row .value.gold{color:var(--gold);}
-.info-row .value.closed{color:#e05656;font-weight:600;}
+.info-row .value.closed{color:#e05656;font-weight:700;}
 
 .cta-box{
   margin-top:22px;
   text-align:center;
-  padding:26px 18px;
-  border-radius:18px;
+  padding:28px 18px;
+  border-radius:20px;
   background:
-    radial-gradient(circle at 50% 0%, rgba(201,162,39,.18), transparent 65%),
-    var(--bg-soft);
-  border:1px solid rgba(201,162,39,.26);
+    radial-gradient(circle at 50% 0%, rgba(201,162,39,.2), transparent 70%),
+    var(--bg-card);
+  border:1px solid rgba(201,162,39,.32);
 }
 .cta-box h3{
   font-family:'Bebas Neue',sans-serif;
   font-weight:400;
-  font-size:1.6rem;
+  font-size:1.8rem;
   letter-spacing:.5px;
   margin-bottom:6px;
 }
-.cta-box p{color:var(--muted);font-size:.88rem;margin-bottom:18px;}
+.cta-box p{color:var(--muted);font-size:.9rem;margin-bottom:20px;}
 
 /* ============ FOOTER ============ */
 .footer{
-  padding:28px 0 calc(28px + env(safe-area-inset-bottom));
+  padding:32px 0 calc(32px + env(safe-area-inset-bottom));
   border-top:1px solid var(--line);
   text-align:center;
 }
 .footer .logo{
   justify-content:center;
-  font-size:1.15rem;margin-bottom:8px;
+  font-size:1.2rem;margin-bottom:6px;
 }
 .footer .tagline{
   font-size:.78rem;
   color:var(--gold);
-  letter-spacing:.18em;
+  letter-spacing:.2em;
   text-transform:uppercase;
-  margin-bottom:8px;
-  font-weight:600;
+  margin-bottom:10px;
+  font-weight:700;
 }
 .footer p{font-size:.78rem;color:var(--muted);}
 .footer .sep{color:var(--gold);margin:0 6px;}
@@ -496,62 +730,51 @@ h2{
   right:16px;
   bottom:calc(16px + env(safe-area-inset-bottom));
   z-index:90;
-  width:54px;height:54px;
+  width:56px;height:56px;
   display:grid;place-items:center;
   border-radius:50%;
   background:linear-gradient(135deg,#2ee36b,#1faa4f);
-  box-shadow:0 10px 24px rgba(31,170,79,.38);
+  box-shadow:0 10px 26px rgba(31,170,79,.42);
   transition:transform .2s ease;
 }
 .whats-float:active{transform:scale(.92);}
-.whats-float svg{width:27px;height:27px;fill:#fff;}
+.whats-float svg{width:28px;height:28px;fill:#fff;}
 
-/* ============ TABLET / DESKTOP ============ */
+/* ============ TABLET & DESKTOP ============ */
 @media (min-width:640px){
   :root{--max:720px;}
-  section{padding:80px 0;}
-  h2{font-size:2.4rem;margin-bottom:14px;}
+  section{padding:74px 0;}
+  h2{font-size:2.6rem;margin-bottom:12px;}
   .lead{font-size:1rem;}
   .header{padding:14px 0;}
   .header-inner{padding:0 22px;}
   .logo{font-size:1.45rem;letter-spacing:2.5px;}
-  .logo-icon{width:44px;height:44px;}
-  .btn-header{font-size:.85rem;padding:10px 20px;}
-  .hero{min-height:88svh;padding:120px 0 80px;}
-  .hero-logo-img{width:155px;height:155px;}
-  .hero h1{font-size:5rem;}
-  .hero p{font-size:1.05rem;margin-bottom:30px;}
+  .logo-icon{width:46px;height:46px;}
+  .header-status{display:inline-flex;}
+  .btn-header{font-size:.85rem;padding:10px 22px;}
+  .hero{min-height:88svh;padding:125px 0 80px;}
+  .hero-logo-img{width:160px;height:160px;}
+  .hero h1{font-size:5.2rem;}
+  .hero p{font-size:1.08rem;margin-bottom:32px;}
   .hero-actions{flex-direction:row;max-width:none;justify-content:center;}
-  .btn{padding:16px 26px;font-size:.95rem;}
+  .btn{padding:16px 28px;font-size:.95rem;}
   .container{padding:0 22px;}
-  .services{grid-template-columns:1fr 1fr;gap:12px;}
-  .service{padding:18px 20px;gap:6px;}
-  .service h3{font-size:1rem;}
-  .service p{font-size:.85rem;}
-  .price{font-size:1.4rem;}
-  .gallery{grid-template-columns:repeat(3,1fr);gap:12px;}
-  .gallery figure:first-child{grid-column:span 3;aspect-ratio:21/9;}
-  .about-img{aspect-ratio:16/10;margin-bottom:26px;}
-  .stats{gap:10px;margin-top:26px;}
-  .stat{padding:18px 10px;}
-  .stat strong{font-size:1.7rem;}
-  .info-card{padding:6px 26px;margin-top:26px;}
-  .info-row{padding:16px 0;font-size:.95rem;}
-  .cta-box{padding:34px 22px;margin-top:30px;}
-  .cta-box h3{font-size:1.9rem;}
-  .footer{padding:38px 0 calc(38px + env(safe-area-inset-bottom));}
+  .prices-grid{grid-template-columns:1fr 1fr;gap:14px;}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);gap:12px;}
+  .reviews-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .cta-box{padding:36px 24px;}
+  .cta-box h3{font-size:2.1rem;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= ABERTURA / SPLASH SCREEN ================= -->
-<div id="splash-screen" class="splash-screen" title="Clique para entrar">
+<!-- ================= ABERTURA / SPLASH SCREEN (100% PRETO SÓLIDO) ================= -->
+<div id="splash-screen" class="splash-screen" title="Toque para entrar no site">
   <div class="splash-content">
     <div class="splash-logo-wrapper">
       <img src="/logo.jpg" alt="Fonsati do Corte Barbearia" class="splash-logo-img">
-      <div class="splash-glow"></div>
     </div>
     <div class="splash-title">FONSATI <span>DO CORTE</span></div>
     <div class="splash-badge">CHEGOU, CORTOU!</div>
@@ -570,8 +793,14 @@ h2{
       <img src="/logo.jpg" alt="Logo Fonsati do Corte" class="logo-icon">
       <span>FONSATI</span> <span class="gold">DO CORTE</span>
     </a>
-    <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Como%20est%C3%A1%20o%20movimento%20hoje%20na%20Fonsati%20do%20Corte%3F"
-       target="_blank" rel="noopener" class="btn-header">Chegou, Cortou!</a>
+
+    <div class="header-status">
+      <span class="header-status-dot"></span>
+      Chegou, Cortou!
+    </div>
+
+    <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Gostaria%20de%20saber%20como%20est%C3%A1%20o%20movimento%20hoje%20na%20Fonsati%20do%20Corte%3F"
+       target="_blank" rel="noopener" class="btn-header">Chamar no Zap</a>
   </div>
 </header>
 
@@ -594,136 +823,240 @@ h2{
     </div>
 
     <h1>CHEGOU,<br><span class="gold">CORTOU!</span></h1>
-    <p>Sem burocracia de agendamento na <strong>Fonsati do Corte</strong>. Atendimento por ordem de chegada de <strong>Segunda a Sexta</strong>: barba na navalha, corte afiado e respeito ao seu tempo.</p>
+    <p>Sem burocracia de agendamento na <strong>Fonsati do Corte</strong>. É por ordem de chegada: barba na navalha, degradê afiado e respeito total ao seu tempo.</p>
 
     <div class="hero-actions">
-      <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Como%20est%C3%A1%20o%20movimento%20hoje%20na%20Fonsati%20do%20Corte%3F"
+      <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Como%20est%C3%A1%20o%20movimento%20agora%20na%20barbearia%3F"
          target="_blank" rel="noopener" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 0 16.48m4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-1.98-1.22 7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.74 2.65 4.2 3.72.59.25 1.05.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29"/></svg>
         Falar no WhatsApp
       </a>
-      <a href="#contato" class="btn btn-ghost">Rua Cisne Negro, 887</a>
+      <a href="#tabela-precos" class="btn btn-ghost">Ver Preços e Cortes</a>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVIÇOS ================= -->
-<section id="servicos">
+<!-- ================= TABELA DE PREÇOS OFICIAL ================= -->
+<section id="tabela-precos" class="services-section">
   <div class="container">
     <div>
-      <span class="eyebrow">Nossos serviços · Chegou, Cortou</span>
-      <h2>O corte certo,<br>sem enrolação</h2>
-      <p class="lead">Atendimento por ordem de chegada com agilidade e lâmina afiada para o seu visual.</p>
+      <span class="eyebrow">Tabela de Preços · Chegou, Cortou</span>
+      <h2>NOSSOS VALORES</h2>
+      <p class="lead">Preço justo, técnica de alto nível e rapidez no atendimento por ordem de chegada.</p>
     </div>
 
-    <ul class="services">
-      <li class="service">
-        <h3>Corte Masculino</h3>
-        <p>Máquina, tesoura e acabamento impecável</p>
-        <span class="price">R$ 45</span>
-      </li>
+    <div class="prices-grid">
+      <!-- Corte Social -->
+      <div class="price-card">
+        <div class="price-card-header">
+          <div>
+            <h3>Corte Social</h3>
+          </div>
+          <span class="price-val">R$ 30</span>
+        </div>
+        <p>Corte tradicional na tesoura ou máquina, alinhamento clássico, acabamento fino e finalização impecável.</p>
+        <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Vou%20passar%20a%C3%AD%20para%20fazer%20o%20Corte%20Social%20(R$%2030)."
+           target="_blank" rel="noopener" class="btn-card-order">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+          Quero esse corte
+        </a>
+      </div>
 
-      <li class="service">
-        <h3>Barba na Navalha</h3>
-        <p>Toalha quente, óleo e precisão no contorno</p>
-        <span class="price">R$ 35</span>
-      </li>
+      <!-- Corte Moderno / Degradê -->
+      <div class="price-card featured">
+        <span class="card-badge">Mais Pedido 🔥</span>
+        <div class="price-card-header">
+          <div>
+            <h3>Corte Moderno</h3>
+          </div>
+          <span class="price-val">R$ 35</span>
+        </div>
+        <p>Degradê navalhado (fade), taper fade, disfarçado, textura, risquinhos e freestyle com acabamento na navalha.</p>
+        <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Vou%20passar%20a%C3%AD%20para%20mandar%20aquele%20Corte%20Moderno%20com%20Degrad%C3%AA%20(R$%2035)."
+           target="_blank" rel="noopener" class="btn-card-order">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+          Quero esse corte
+        </a>
+      </div>
 
-      <li class="service">
-        <h3>Combo Corte + Barba</h3>
-        <p>O pacote completo com desconto especial</p>
-        <span class="price">R$ 70</span>
-      </li>
+      <!-- Pezinho -->
+      <div class="price-card">
+        <div class="price-card-header">
+          <div>
+            <h3>Pezinho</h3>
+          </div>
+          <span class="price-val">R$ 15</span>
+        </div>
+        <p>Acabamento dos contornos na lâmina, nuca e costeletas para manter a régua e o corte sempre alinhados.</p>
+        <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Vou%20passar%20para%20fazer%20o%20Pezinho%20(R$%2015)."
+           target="_blank" rel="noopener" class="btn-card-order">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+          Fazer o pezinho
+        </a>
+      </div>
 
-      <li class="service">
-        <h3>Sobrancelha</h3>
-        <p>Alinhamento masculino na navalha</p>
-        <span class="price">R$ 20</span>
-      </li>
+      <!-- Barba -->
+      <div class="price-card">
+        <div class="price-card-header">
+          <div>
+            <h3>Barba</h3>
+          </div>
+          <span class="price-val">R$ 10</span>
+        </div>
+        <p>Alinhamento, desenho e contorno na navalha para deixar o rosto limpo e desenhado no padrão Fonsati.</p>
+        <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Vou%20passar%20a%C3%AD%20para%20alinhar%20a%20Barba%20(R$%2010)."
+           target="_blank" rel="noopener" class="btn-card-order">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+          Fazer a barba
+        </a>
+      </div>
+    </div>
 
-      <li class="service">
-        <h3>Pigmentação</h3>
-        <p>Preenchimento e definição de falhas</p>
-        <span class="price">R$ 40</span>
-      </li>
+    <!-- Combos Especiais -->
+    <h3 class="combos-title">COMBOS COMPLETOS</h3>
+    <div class="combos-grid">
+      <div class="combo-card">
+        <h4>Social + Barba</h4>
+        <div class="combo-price">R$ 40</div>
+        <p style="font-size:.78rem;color:var(--muted);margin-top:2px;">Corte social alinhado com barba feita na navalha.</p>
+      </div>
 
-      <li class="service">
-        <h3>Platinado / Luzes</h3>
-        <p>Descoloração profissional e tonalização</p>
-        <span class="price">R$ 120</span>
-      </li>
-    </ul>
+      <div class="combo-card">
+        <h4>Degradê + Barba</h4>
+        <div class="combo-price">R$ 45</div>
+        <p style="font-size:.78rem;color:var(--muted);margin-top:2px;">Fade moderno completo com barba desenhada.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ================= GALERIA ================= -->
+<!-- ================= GALERIA 100% REAL ================= -->
 <section id="galeria">
   <div class="container">
-    <div>
-      <span class="eyebrow">Galeria</span>
-      <h2>Nosso trabalho</h2>
+    <div class="gallery-intro">
+      <div>
+        <span class="eyebrow">Galeria Real</span>
+        <h2>NOSSO TRABALHO</h2>
+        <p class="lead">Fotos reais feitas na Barbearia Fonsati do Corte. Clique na foto para ampliar.</p>
+      </div>
+      <div class="gallery-badge">100% Fotos Reais</div>
     </div>
 
-    <div class="gallery">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80"
-             alt="Interior da barbearia" onerror="this.style.display='none'">
+    <div class="gallery-grid">
+      <!-- Corte 1: Degradê com desenho geométrico -->
+      <figure class="gallery-item" onclick="openLightbox('/images/corte1.jpg', 'Degradê Navalhado com Desenho Geométrico')">
+        <img src="/images/corte1.jpg" alt="Degradê com desenho geométrico Fonsati do Corte" loading="lazy">
+        <figcaption class="gallery-caption">
+          Degradê Freestyle <span>Ver ➔</span>
+        </figcaption>
       </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=400&q=80"
-             alt="Corte masculino" onerror="this.style.display='none'">
+
+      <!-- Corte 2: Disfarçado com Freestyle -->
+      <figure class="gallery-item" onclick="openLightbox('/images/corte2.jpg', 'Disfarçado Navalhado com Desenho Personalizado')">
+        <img src="/images/corte2.jpg" alt="Disfarçado navalhado Fonsati do Corte" loading="lazy">
+        <figcaption class="gallery-caption">
+          Fade Navalhado <span>Ver ➔</span>
+        </figcaption>
       </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=400&q=80"
-             alt="Barba feita na navalha" onerror="this.style.display='none'">
+
+      <!-- Corte 3: Coroa e Estrelas -->
+      <figure class="gallery-item" onclick="openLightbox('/images/corte3.jpg', 'Corte com Desenho de Coroa e Estrelas')">
+        <img src="/images/corte3.jpg" alt="Desenho de coroa e estrelas Fonsati do Corte" loading="lazy">
+        <figcaption class="gallery-caption">
+          Arte Coroa & Estrelas <span>Ver ➔</span>
+        </figcaption>
       </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=400&q=80"
-             alt="Detalhe do acabamento" onerror="this.style.display='none'">
+
+      <!-- Corte 4: Taper Fade com Riscos -->
+      <figure class="gallery-item" onclick="openLightbox('/images/corte4.jpg', 'Taper Fade Moderno com Riscos')">
+        <img src="/images/corte4.jpg" alt="Taper fade moderno com riscos Fonsati do Corte" loading="lazy">
+        <figcaption class="gallery-caption">
+          Taper Fade <span>Ver ➔</span>
+        </figcaption>
       </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=400&q=80"
-             alt="Barbeiro finalizando o corte" onerror="this.style.display='none'">
+
+      <!-- Foto 5: Cadeira e Bancada Real -->
+      <figure class="gallery-item" onclick="openLightbox('/images/interior.jpg', 'Espaço e Estrutura da Barbearia Fonsati do Corte')">
+        <img src="/images/interior.jpg" alt="Interior da Barbearia Fonsati do Corte" loading="lazy">
+        <figcaption class="gallery-caption">
+          Nosso Espaço <span>Ver ➔</span>
+        </figcaption>
       </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=400&q=80"
-             alt="Cliente satisfeito" onerror="this.style.display='none'">
+
+      <!-- Foto 6: Fachada Real -->
+      <figure class="gallery-item" onclick="openLightbox('/images/fachada.jpg', 'Fachada Oficial na Rua Cisne Negro, 887')">
+        <img src="/images/fachada.jpg" alt="Fachada da Barbearia Fonsati do Corte Rua Cisne Negro 887" loading="lazy">
+        <figcaption class="gallery-caption">
+          Fachada Oficial <span>Ver ➔</span>
+        </figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- ================= SOBRE ================= -->
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close">&times;</div>
+  <img id="lightbox-img" class="lightbox-img" src="" alt="Ampliação do corte">
+</div>
+
+<!-- ================= SOBRE (COM FACHADA REAL) ================= -->
 <section id="sobre">
   <div class="container">
-    <figure class="about-img">
-      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80"
-           alt="Ambiente da Barbearia Fonsati do Corte" onerror="this.style.display='none'">
-    </figure>
+    <div class="about-card">
+      <img src="/images/fachada.jpg" alt="Fachada da Barbearia Fonsati do Corte na Rua Cisne Negro 887">
+      <div class="about-card-badge">
+        📍 Rua Cisne Negro, 887
+      </div>
+    </div>
 
     <div>
       <span class="eyebrow">Nossa História</span>
       <h2>FONSATI DO CORTE<br><span class="gold">DESDE 2025</span></h2>
       <p class="lead">
-        Fundada em <strong>2025</strong>, a <strong>Fonsati do Corte</strong> nasceu com a proposta de resgatar a verdadeira alma da barbearia clássica combinada com a agilidade do mundo moderno.
-        Nosso sistema é <strong>Chegou, Cortou</strong>: sem filas desnecessárias e sem a complicação de agendamento rígido. Você chega, relaxa, troca uma ideia e sai com a régua máxima — estilo, atitude e confiança garantidos.
+        Fundada em <strong>2025</strong>, a <strong>Fonsati do Corte</strong> foi criada para quem quer corte de qualidade sem burocracia.
+        Aqui você encontra ambiente de respeito, navalha afiada, produtos de primeira e a praticidade do <strong>Chegou, Cortou</strong>: é só encostar na barbearia por ordem de chegada e sair com a régua máxima!
       </p>
     </div>
 
     <div class="stats">
       <div class="stat"><strong>2025</strong><span>Fundação</span></div>
       <div class="stat"><strong>100%</strong><span>Chegou, Cortou</span></div>
-      <div class="stat"><strong>Top</strong><span>Qualidade &amp; Respeito</span></div>
+      <div class="stat"><strong>R$ 30</strong><span>A partir de</span></div>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTATO ================= -->
+<!-- ================= AVALIAÇÕES ================= -->
+<section id="avaliacoes">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Quem corta recomenda</span>
+      <h2>CLIENTES SATISFEITOS</h2>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Melhor degradê da região! O esquema de 'chegou, cortou' salva muito, sem precisar agendar dias antes."</p>
+        <span class="review-author">— Gabriel M., Cliente Frequente</span>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Barba e cabelo impecáveis por um preço justo. O barbeiro manda muito bem nos desenhos e risquinhos!"</p>
+        <span class="review-author">— Lucas Silva, Cliente</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO / HORÁRIOS ================= -->
 <section id="contato">
   <div class="container">
     <div>
       <span class="eyebrow">Onde nos encontrar</span>
-      <h2>Horários &amp; endereço</h2>
+      <h2>HORÁRIOS &amp; LOCALIZAÇÃO</h2>
     </div>
 
     <div class="info-card">
@@ -741,8 +1074,8 @@ h2{
       </div>
       <div class="info-row">
         <span class="label">Endereço</span>
-        <a class="value" href="https://www.google.com/maps/search/?api=1&query=Rua+Cisne+Negro+887" target="_blank" rel="noopener">
-          Rua Cisne Negro, 887<br><span class="gold">Ver no mapa ➔</span>
+        <a class="value gold" href="https://www.google.com/maps/search/?api=1&query=Rua+Cisne+Negro+887" target="_blank" rel="noopener">
+          Rua Cisne Negro, 887<br><span style="font-size:.78rem;">Abrir no Google Maps ➔</span>
         </a>
       </div>
       <div class="info-row">
@@ -755,7 +1088,7 @@ h2{
 
     <div class="cta-box">
       <h3>SÓ CHEGAR E CORTAR!</h3>
-      <p>Aberto de Segunda a Sexta. Quer saber como está a fila antes de vir? Manda uma mensagem no WhatsApp que te respondemos rapidinho!</p>
+      <p>Aberto de Segunda a Sexta. Quer checar a fila antes de sair de casa? Mande uma mensagem agora no WhatsApp que respondemos rapidinho!</p>
       <a href="https://wa.me/5543996216760?text=Ol%C3%A1!%20Como%20est%C3%A1%20o%20movimento%20hoje%20na%20Fonsati%20do%20Corte%3F"
          target="_blank" rel="noopener" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 0 16.48m4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-1.98-1.22 7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.74 2.65 4.2 3.72.59.25 1.05.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29"/></svg>
@@ -784,7 +1117,7 @@ h2{
 </a>
 
 <script>
-  /* ---- Abertura / Splash Screen ---- */
+  /* ---- Abertura / Splash Screen (100% Preto Sólido) ---- */
   const splash = document.getElementById('splash-screen');
   const skipBtn = document.getElementById('splash-skip');
   const closeSplash = () => {
@@ -800,9 +1133,25 @@ h2{
       closeSplash();
     });
     splash.addEventListener('click', closeSplash);
-    // Transição suave após a barra carregar (~1.8s)
     setTimeout(closeSplash, 1900);
   }
+
+  /* ---- Lightbox Modal para Galeria Real ---- */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || 'Corte Fonsati do Corte';
+    lightbox.classList.add('active');
+  }
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 
   /* ---- Header com fundo ao rolar ---- */
   const header = document.getElementById('header');
