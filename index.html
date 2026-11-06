@@ -765,6 +765,32 @@ h2{
   .cta-box{padding:36px 24px;}
   .cta-box h3{font-size:2.1rem;}
 }
+
+.hero-spacer{
+  height:18px;
+}
+.splash-watermark{
+  margin-top:22px;
+  font-size:.72rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+  font-weight:500;
+}
+.splash-watermark span{
+  color:var(--gold);
+  font-weight:700;
+}
+.footer-dev{
+  margin-top:10px;
+  font-size:.76rem;
+  color:var(--muted);
+  letter-spacing:.06em;
+}
+.footer-dev span{
+  font-weight:700;
+}
+
 </style>
 </head>
 
@@ -783,6 +809,7 @@ h2{
       <div class="splash-loader-bar"></div>
     </div>
     <button type="button" class="splash-skip" id="splash-skip">Entrar no site ➔</button>
+    <div class="splash-watermark">Desenvolvido por <span>00brother</span></div>
   </div>
 </div>
 
@@ -822,7 +849,7 @@ h2{
       <div class="hero-badge-chegou">Atendimento: Chegou, Cortou!</div>
     </div>
 
-    <h1>CHEGOU,<br><span class="gold">CORTOU!</span></h1>
+    <div class="hero-spacer"></div>
     <p>Sem burocracia de agendamento na <strong>Fonsati do Corte</strong>. É por ordem de chegada: barba na navalha, degradê afiado e respeito total ao seu tempo.</p>
 
     <div class="hero-actions">
@@ -1107,6 +1134,7 @@ h2{
     </div>
     <div class="tagline">Estilo • Atitude • Confiança</div>
     <p>© <span id="year"></span> Fonsati do Corte · Desde 2025 · Rua Cisne Negro, 887<span class="sep">·</span>Todos os direitos reservados</p>
+    <p class="footer-dev">Desenvolvido por <span class="gold">00brother</span></p>
   </div>
 </footer>
 
